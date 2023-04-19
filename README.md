@@ -45,34 +45,3 @@ gedit ~/.bashrc
 export ROS_IP=<computer_ip>
 export ROS_MASTER_URI=http://<computer_ip>:11311
 
-## Open the desk interface to unlock and start the robot
-
-In the broswer of Mozilla, go to the address https://<robot_ip>/desk/ where the IP address is the IP address of the robot.
-
-
-## How to start the impedance controller 
-roslaunch franka_example_controllers cartesian_impedance_example_controller.launch robot_ip:=<robot_ip> load_gripper:=True
-
-For example,
-<robot_ip>=172.16.0.2
-
-## How to read the current position and orientation of the end-effector? 
-
-rostopic echo /cartesian_pose
-
-## How to connect your PC to the network and read and send commands to the controller. 
-1. Connect your PC to the network
-2. Create a new wired network and in IPv4 set Manual and put a new ip for your computer
-<pc_ip>=A.B.C.F where F is different from the <computer_ip> or the <robot_ip>. Netmask is the same  255.255.255.0. 
-Save the network. 
-3.Add this to your bash file (gedit ~/.bashrc): 
-export ROS_MASTER_URI=http://<computer_ip>:11311 
-export ROS_IP=<pc_ip>
-export ROS_HOSTNAME=<pc_ip>
-4. source ros
-source /opt/ros/<ros_version>/setup.bash
-5. Test the data_streaming with 
-rostopic list 
-
-Example: **<computer_ip>=172.16.0.10**
-
