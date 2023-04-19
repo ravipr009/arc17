@@ -16,16 +16,13 @@ Packages:
     ur_modern_driver: Control package for communication with the universal robot.
 
 
-## How to install the controller
-https://frankaemika.github.io/docs/installation_linux.html#building-the-ros-packages 
+## How to install 
 1. Be sure to have ros and moveit installed 
 2. create a new catkin workspace catkin_ws:
 3. Creat a src folder catkin_ws/src
 3. clone this folder in the src folder
 **git@github.com:ravipr009/arc17.git**
-
-**catkin_make **
-
+4. **catkin_make **
 5. Source ros in the repository 
 **source devel/setup.sh**
 
@@ -34,7 +31,7 @@ https://frankaemika.github.io/docs/installation_linux.html#building-the-ros-pack
 
 ## Ensure that the robot eternet cable and the computer cable are connected correctly to the router switch
 
-## Set the computer on the right IP address:
+## INFO on how to Set the computer on the right IP address:
 How to find the right IP address? 
 The IP address is composed by 4 number A.B.C.D. The first three need to be set as the same of the one set in the robot when it was installed. Please ask for this number. This number is stored in the NETWORK sction of the Desk interface of the robot. 
  The number D need to be different than the robot one because the robot and the computer do need to be in different IPs. 
